@@ -11,7 +11,7 @@
 Manager::Manager():Employee(){
 }
 Manager::Manager( char* name, double salary, unsigned experience, char* section):Employee(name,salary,experience),section(new char[strlen(section)+1]){
-    strcpy(section,section);
+    strcpy(this->section,section);
     //delete []section;
 
 }
