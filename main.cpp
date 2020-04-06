@@ -15,6 +15,6 @@ int main() {
 
 
 
-    std::cout <<exe->get_title();
+    std::cout <<*exe;
     return 0;
 }

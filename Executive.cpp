@@ -36,9 +36,8 @@ Executive &Executive::operator=( const Executive & rhs) {
 }
 
 std::ostream &Executive::ins( std::ostream & out) const {
-  // Employee::ins(out);
-
-    return Manager::ins( out);
+    Manager::ins( out)<<"Executive :"<<title;
+    return out;
 }
 
 int Executive::set_title(char* n) {
