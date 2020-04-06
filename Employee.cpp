@@ -8,7 +8,7 @@
 
 Employee::Employee() :name(new char[10]),salary(0),experience(0){
     strcpy_s(name,strlen(name)+1,"no");
-  //  std::cout << " name :"<< this->name<<"\n salary :"<<salary<<"\n experience :"<<experience;
+  //  std::cout << " name :"<< this->name<<"\n salary :"<<salary<<"\n experience :"<<experience;///
 }
 
 
