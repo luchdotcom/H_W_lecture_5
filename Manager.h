@@ -13,7 +13,7 @@
 
 #include "Employee.h"
 
-class Manager : public Employee{
+class Manager : virtual public Employee{
 public:
     Manager();
     Manager( char*, double, unsigned, char*);

@@ -9,8 +9,9 @@
 #ifndef H_W_LECTURE_5_EMPLOYEE_H
 #define H_W_LECTURE_5_EMPLOYEE_H
 
-
+#include <iostream>
 class Employee {
+
 public:
     Employee();
     Employee( char*, double, unsigned);
