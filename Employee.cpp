@@ -18,7 +18,7 @@ Employee::Employee( char *name, double salary, unsigned experience ):name(name),
 }
 
 Employee::Employee( const Employee & rhs):name(new char [strlen(name)+1]),salary(rhs.salary),experience(rhs.experience){
-    strcpy(name,rhs.name);
+    strcpy(this->name,rhs.name);
 }
 
 Employee &Employee::operator=( const Employee & rhs) {
@@ -36,14 +36,14 @@ Employee::~Employee() {
    // delete name;
 }
 
-int Employee::set_name( char * name) {
+int Employee::set_name( char * n) {
     if (this!= nullptr) {
-        delete[] this->name;
-        this->name= nullptr;
+        delete[] this;
+        name= nullptr;
     }
-    this->name=new char[strlen(name)+1];
-    strcpy(this->name,name);
-    delete []this->name;// ??????trqbwa li da go ima
+    name=new char[strlen(n)+1];
+    strcpy(name,n);
+    delete [] name;// ??????trqbwa li da go ima
     return 0;
 }
 
