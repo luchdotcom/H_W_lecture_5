@@ -8,11 +8,13 @@
 
 
 
-Manager::Manager():Employee(),section(" g"){
+Manager::Manager():Employee(),section(new char[10]){
+    strcpy(section,"dd");
 }
-Manager::Manager( char* name, double salary, unsigned experience, char* section):Employee(name,salary,experience),section(new char[strlen(section)+1]){
+Manager::Manager( char* name, double salary, unsigned experience, char* section):Employee(name,salary,experience),
+section(new char[strlen(section)+1]){
     strcpy(this->section,section);
-   delete []section;
+
 
 }
 Manager::Manager( const Manager& rhs):Employee(rhs),section( new char[strlen(section)+1]){
@@ -31,7 +33,10 @@ Manager & Manager::operator=( const Manager& rhs){
 }
 Manager::~Manager(){
  std::cout <<"manager destructor";
-    //delete  section;
+    if (section!= nullptr) {
+        delete[] section;
+        section= nullptr;
+    }
 }
 
 std::ostream& Manager:: ins(std::ostream& out)const {

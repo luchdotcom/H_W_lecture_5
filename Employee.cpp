@@ -7,13 +7,15 @@
 #include "Employee.h"
 
 Employee::Employee() :name(new char[10]),salary(0),experience(0){
-    strcpy_s(name,strlen(name)+1,"no");
+   //strcpy_s(name,strlen(name)+1,"no");
+    strcpy(name,"no name");
   //  std::cout << " name :"<< this->name<<"\n salary :"<<salary<<"\n experience :"<<experience;///
 }
 
 
 
-Employee::Employee( char *name, double salary, unsigned experience ):name(name),salary(salary),experience(experience) {
+Employee::Employee( char *name, double salary, unsigned experience ):name(new char[69]),salary(salary),experience(experience) {
+    strcpy(name,name);
 
 }
 
@@ -33,7 +35,11 @@ Employee &Employee::operator=( const Employee & rhs) {
 
 Employee::~Employee() {
     std::cout<<"destructor Employee\n";
-   // delete name;
+    if (name!= nullptr) {
+        delete [] name;
+        name= nullptr;
+    }
+
 }
 
 int Employee::set_name( char * n) {
