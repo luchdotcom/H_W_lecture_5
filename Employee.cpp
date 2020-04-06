@@ -43,7 +43,7 @@ int Employee::set_name( char * n) {
     }
     name=new char[strlen(n)+1];
     strcpy(name,n);
-    delete [] name;// ??????trqbwa li da go ima
+    delete [] name;// ?trqbwa li da go ima
     return 0;
 }
 
